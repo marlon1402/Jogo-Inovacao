@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dv0gu01xe08jt"]
+
+[ext_resource type="Script" path="res://Characters/player.gd" id="1_c6fxo"]
+[ext_resource type="Texture2D" uid="uid://v1mxyiw2ppuc" path="res://assets/Sprite Pack 5/2 - Lil Wiz/Idle_(32 x 32).png" id="1_vfd38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv3oc"]
+atlas = ExtResource("1_vfd38")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5noh"]
+atlas = ExtResource("1_vfd38")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n4vu"]
+atlas = ExtResource("1_vfd38")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kesrw"]
+atlas = ExtResource("1_vfd38")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muw8c"]
+atlas = ExtResource("1_vfd38")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_syxst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv3oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5noh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n4vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kesrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muw8c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xijdf"]
+size = Vector2(20, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnah6"]
+size = Vector2(178, 20)
+
+[node name="World" type="Node2D"]
+position = Vector2(384, 190)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("1_c6fxo")
+
+[node name="Animated" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_syxst")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_xijdf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, 10)
+shape = SubResource("RectangleShape2D_nnah6")
