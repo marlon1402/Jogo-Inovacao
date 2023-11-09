@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl0ktxkrlc3je"]
+
+[ext_resource type="FontFile" uid="uid://citlncmac81sc" path="res://font/RevMiniPixel.ttf" id="1_0s44s"]
+[ext_resource type="Script" path="res://Characters/end_game_screen.gd" id="1_ypen2"]
+[ext_resource type="Texture2D" uid="uid://dol86n0mg3lmn" path="res://assets/Sprite Pack 5/10 - Backgrounds/VOCÊ.png" id="2_sah3f"]
+
+[node name="end_game_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypen2")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sah3f")
+
+[node name="label" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -65.0
+offset_right = 119.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.0862745, 0.0352941, 1)
+theme_override_fonts/font = ExtResource("1_0s44s")
+theme_override_font_sizes/font_size = 32
+text = "Você se atrasou para a aula...
+Fim do Jogo.
+
+
+Aperte \"Enter\" Para Continuar."

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dv0gu01xe08jt"]
+[gd_scene load_steps=50 format=3 uid="uid://dv0gu01xe08jt"]
 
 [ext_resource type="Texture2D" uid="uid://bhupn22i6d23k" path="res://assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="1_34e6l"]
 [ext_resource type="Script" path="res://Characters/world.gd" id="1_twevb"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://Characters/lava.gd" id="28_d0nij"]
 [ext_resource type="AudioStream" uid="uid://dvjeat2a2rh8v" path="res://sounds/flame-or-lava.wav" id="29_5awnr"]
 [ext_resource type="AudioStream" uid="uid://c8v2cs63c8tff" path="res://sounds/Kanye-West-I-Wonder-(HiphopMood.com).mp3" id="29_ymukb"]
+[ext_resource type="Script" path="res://Characters/end_game.gd" id="31_jvjb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1d7i"]
 texture = ExtResource("1_34e6l")
@@ -838,6 +839,9 @@ size = Vector2(734, 141)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2iab"]
 size = Vector2(1266, 436)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l41mt"]
+size = Vector2(20, 40)
+
 [node name="World" type="Node2D"]
 position = Vector2(365, 194)
 script = ExtResource("1_twevb")
@@ -858,7 +862,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(1704190, 589826, 3, 1704191, 655362, 3, 1704192, 851970, 3, 1442053, 851970, 3, 1442051, 589826, 3, 1442052, 655362, 3, 1245436, 589826, 3, 1245437, 655362, 3, 1245438, 851970, 3, 983299, 851970, 3, 983297, 589826, 3, 983298, 655362, 3, 786694, 983042, 3, 524552, 983042, 3)
 
 [node name="Player" parent="." instance=ExtResource("8_dh5fa")]
-position = Vector2(-284, 450)
+position = Vector2(-268, 480)
 
 [node name="coins" type="Node2D" parent="."]
 
@@ -1406,4 +1410,13 @@ stream = ExtResource("29_ymukb")
 volume_db = -15.0
 autoplay = true
 
+[node name="end_game" type="Area2D" parent="."]
+position = Vector2(5396, -360)
+script = ExtResource("31_jvjb3")
+
+[node name="collision" type="CollisionShape2D" parent="end_game"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_l41mt")
+
 [connection signal="body_entered" from="lava_area" to="lava_area" method="_on_body_entered"]
+[connection signal="body_entered" from="end_game" to="end_game" method="_on_body_entered"]
