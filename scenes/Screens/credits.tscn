@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3bdqh33lphe"]
+
+[ext_resource type="Script" path="res://Characters/credits.gd" id="1_r5usy"]
+[ext_resource type="Texture2D" uid="uid://g02ek6cyddsm" path="res://assets/Sprite Pack 5/10 - Backgrounds/BG.png" id="2_ruf17"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5usy")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ruf17")
+
+[node name="credits_label" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 10.5
+offset_right = 0.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "-= Criado Por =-
+Marlon Samuel
+Davi Luz
+Jeremias Alejandro
+Agnaldo Fernandes
+
+-= Desenvolvimento de Jogo =-
+Marlon Samuel - Diretor de Jogo
+Marlon Samuel - Programação
+
+-= Trilha Sonora Original =-
+Kanye West - I Wonder
+
+-= Arte e Design =-
+Davi Luz - Arte de Fundo
+
+-= Teste e Qualidade =-
+Agnaldo - Teste de Qualidade
+Jeremias - Teste de Qualidade
+
+Copyright © 20223 Agnalon Incorporation FC
+Obrigado por jogar!
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1

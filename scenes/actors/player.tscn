@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bcmhdppxa105a"]
+[gd_scene load_steps=22 format=3 uid="uid://bcmhdppxa105a"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_wvfo7"]
 [ext_resource type="Texture2D" uid="uid://v1mxyiw2ppuc" path="res://assets/Sprite Pack 5/2 - Lil Wiz/Idle_(32 x 32).png" id="2_2eq0e"]
 [ext_resource type="Texture2D" uid="uid://d1pq1fwcw2yit" path="res://assets/Sprite Pack 5/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_d66nc"]
 [ext_resource type="Texture2D" uid="uid://vxp6o15beyt1" path="res://assets/Sprite Pack 5/2 - Lil Wiz/Running_(32 x 32).png" id="4_ketor"]
+[ext_resource type="AudioStream" uid="uid://b1yjp1ixovw42" path="res://sounds/458641__matrixxx__retro-jump-02.wav" id="5_fe4qe"]
+[ext_resource type="AudioStream" uid="uid://dwmlyrymlccye" path="res://sounds/486943__matrixxx__human-aah.wav" id="6_6rs66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xijdf"]
 size = Vector2(12, 17)
@@ -122,12 +124,6 @@ script = ExtResource("1_wvfo7")
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_xijdf")
 
-[node name="Camera" type="Camera2D" parent="."]
-visible = false
-limit_left = -40
-limit_bottom = 850
-editor_draw_limits = true
-
 [node name="Animated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_syxst")
 animation = &"run"
@@ -143,3 +139,27 @@ collision_mask = 4
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_cvthr")
 debug_color = Color(0.717647, 0.0745098, 0, 0.419608)
+
+[node name="remote" type="RemoteTransform2D" parent="."]
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2(6, 8)
+target_position = Vector2(4, 0)
+collision_mask = 4
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2(-6, 8)
+target_position = Vector2(-4, 0)
+collision_mask = 4
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fe4qe")
+volume_db = -5.0
+
+[node name="damage_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6rs66")
+
+[node name="timer_game_over" type="Timer" parent="."]
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="timer_game_over" to="." method="_on_timer_game_over_timeout"]

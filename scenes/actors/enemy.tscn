@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://vlnwamcnbbc2"]
+[gd_scene load_steps=14 format=3 uid="uid://vlnwamcnbbc2"]
 
 [ext_resource type="Script" path="res://Characters/enemy.gd" id="1_77cug"]
 [ext_resource type="Texture2D" uid="uid://cifnj84jjnfpr" path="res://assets/Sprite Pack 5/3 - Big Red/Running_(32 x 32).png" id="1_w4luj"]
 [ext_resource type="Texture2D" uid="uid://dgb7l0fcuug3j" path="res://assets/Sprite Pack 5/3 - Big Red/Hurt_(32 x 32).png" id="3_rt78y"]
 [ext_resource type="Texture2D" uid="uid://cjigfr6aix2bo" path="res://assets/Sprite Pack 5/3 - Big Red/Facing_Player_(32 x 32).png" id="4_qo7d2"]
 [ext_resource type="PackedScene" uid="uid://tfwo6wt7nlof" path="res://prefabs/hitbox.tscn" id="5_0xdgc"]
+[ext_resource type="AudioStream" uid="uid://cl6n0jsvxtqr2" path="res://sounds/kill-enemy-5-8-bit.wav" id="6_1gkp3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_he8re"]
 radius = 7.0
@@ -182,7 +183,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8jcx"]
 size = Vector2(12, 2.5)
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_77cug")
@@ -214,5 +215,8 @@ collision_mask = 6
 [node name="Collision2" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_n8jcx")
+
+[node name="died_sfx" type="AudioStreamPlayer" parent="hitbox"]
+stream = ExtResource("6_1gkp3")
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

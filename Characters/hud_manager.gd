@@ -8,9 +8,11 @@ extends Control
 func _ready():
 	coins_counter.text = str("%04d" % Globals.coins)
 	score_counter.text = str("%06d" % Globals.score)
+	life_counter.text = str("%02d" % Globals.player_life)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	coins_counter.text = str("%04d" % Globals.coins)
 	score_counter.text = str("%06d" % Globals.score)
+	life_counter.text = str("%02d" % Globals.player_life)

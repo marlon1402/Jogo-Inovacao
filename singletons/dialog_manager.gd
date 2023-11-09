@@ -27,6 +27,7 @@ func show_text():
 	dialog_box.display_text(message_lines[current_line])
 	can_advance_message = false
 	
+	
 func _on_all_text_displayed():
 	can_advance_message = true
 	
