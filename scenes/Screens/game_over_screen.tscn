@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://n1wk1pjc4vlk"]
+[gd_scene load_steps=5 format=3 uid="uid://n1wk1pjc4vlk"]
 
 [ext_resource type="Texture2D" uid="uid://2pum3m6smf21" path="res://assets/Sprite Pack 5/10 - Backgrounds/GAME JERE OVER.png" id="1_ix2xo"]
 [ext_resource type="Script" path="res://Characters/game_over_screen.gd" id="1_u0g8s"]
 [ext_resource type="FontFile" uid="uid://citlncmac81sc" path="res://font/RevMiniPixel.ttf" id="2_sox2p"]
+[ext_resource type="AudioStream" uid="uid://dcugwpvvu177q" path="res://sounds/jumpscare_game_over.wav" id="4_j57j6"]
 
 [node name="game_over_screen" type="Control"]
 layout_mode = 3
@@ -40,3 +41,6 @@ text = "Press \"ENTER\" to continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 162
+
+[node name="jumpscare_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j57j6")

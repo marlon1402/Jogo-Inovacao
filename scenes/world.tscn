@@ -1407,7 +1407,6 @@ stream = ExtResource("29_5awnr")
 
 [node name="BG_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_ymukb")
-volume_db = -15.0
 autoplay = true
 
 [node name="end_game" type="Area2D" parent="."]
@@ -1418,5 +1417,9 @@ script = ExtResource("31_jvjb3")
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_l41mt")
 
+[node name="secrets_timer" type="Timer" parent="end_game"]
+wait_time = 15.0
+
 [connection signal="body_entered" from="lava_area" to="lava_area" method="_on_body_entered"]
 [connection signal="body_entered" from="end_game" to="end_game" method="_on_body_entered"]
+[connection signal="timeout" from="end_game/secrets_timer" to="end_game" method="_on_secrets_timer_timeout"]

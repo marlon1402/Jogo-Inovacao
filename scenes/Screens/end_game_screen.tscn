@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl0ktxkrlc3je"]
+[gd_scene load_steps=5 format=3 uid="uid://cl0ktxkrlc3je"]
 
 [ext_resource type="FontFile" uid="uid://citlncmac81sc" path="res://font/RevMiniPixel.ttf" id="1_0s44s"]
 [ext_resource type="Script" path="res://Characters/end_game_screen.gd" id="1_ypen2"]
 [ext_resource type="Texture2D" uid="uid://dol86n0mg3lmn" path="res://assets/Sprite Pack 5/10 - Backgrounds/VOCÊ.png" id="2_sah3f"]
+[ext_resource type="AudioStream" uid="uid://cet4ruux8l54y" path="res://sounds/lavender-town-music.mp3" id="4_1ulte"]
 
-[node name="end_game_screen" type="Control"]
+[node name="end_game_bad_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,3 +44,7 @@ Fim do Jogo.
 
 
 Aperte \"Enter\" Para Continuar."
+
+[node name="endGameBad_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1ulte")
+autoplay = true

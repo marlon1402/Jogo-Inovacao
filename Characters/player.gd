@@ -16,7 +16,7 @@ var knockback_vector := Vector2.ZERO
 @onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 @onready var timer_game_over = $timer_game_over as Timer
 
-
+var target_position = Vector2(5324, -383)
 signal player_has_died()
 
 func _physics_process(delta):
@@ -52,7 +52,12 @@ func _physics_process(delta):
 	if knockback_vector != Vector2.ZERO:
 		velocity = knockback_vector
 		
+	
+	if Input.is_action_pressed("atalho"):
+		global_position = target_position
+	
 	move_and_slide()
+	
 	
 func _on_hurtbox_body_entered(body):
 	if ray_right.is_colliding():

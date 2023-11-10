@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjsqltide2ftl"]
+[gd_scene load_steps=6 format=3 uid="uid://bjsqltide2ftl"]
 
 [ext_resource type="Script" path="res://Characters/title_screen.gd" id="1_r5qil"]
-[ext_resource type="Texture2D" uid="uid://juaykt7w4o35" path="res://assets/Sprite Pack 5/PriscillaGame.jpg" id="1_yfkj1"]
+[ext_resource type="Texture2D" uid="uid://juaykt7w4o35" path="res://assets/Sprite Pack 5/10 - Backgrounds/PriscillaGame.jpg" id="1_yfkj1"]
 [ext_resource type="Theme" uid="uid://cqtdvyrstuu1t" path="res://default_bottons.tres" id="2_g4sgy"]
+[ext_resource type="AudioStream" uid="uid://buvib20j87eoe" path="res://sounds/WetHands.mp3" id="4_puusb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_do1sb"]
 
@@ -68,6 +69,9 @@ layout_mode = 2
 theme = ExtResource("2_g4sgy")
 text = "Sair
 "
+
+[node name="mine_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_puusb")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]

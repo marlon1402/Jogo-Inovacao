@@ -1,5 +1,7 @@
 extends Control
 
+@onready var end_game_bad_sfx = $endGameBad_sfx as AudioStreamPlayer
+
 
 func _ready():
 	set_process_input(true)
