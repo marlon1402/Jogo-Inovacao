@@ -1419,6 +1419,7 @@ shape = SubResource("RectangleShape2D_l41mt")
 
 [node name="secrets_timer" type="Timer" parent="end_game"]
 wait_time = 15.0
+autostart = true
 
 [connection signal="body_entered" from="lava_area" to="lava_area" method="_on_body_entered"]
 [connection signal="body_entered" from="end_game" to="end_game" method="_on_body_entered"]

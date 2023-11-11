@@ -22,6 +22,6 @@ func _on_body_entered(body):
 	
 	
 func _on_secrets_timer_timeout():
-	Secret_tela == false
+	Secret_tela = false
 	
 
