@@ -1,11 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjsqltide2ftl"]
+[gd_scene load_steps=12 format=3 uid="uid://bjsqltide2ftl"]
 
 [ext_resource type="Script" path="res://Characters/title_screen.gd" id="1_r5qil"]
 [ext_resource type="Texture2D" uid="uid://juaykt7w4o35" path="res://assets/Sprite Pack 5/10 - Backgrounds/PriscillaGame.jpg" id="1_yfkj1"]
 [ext_resource type="Theme" uid="uid://cqtdvyrstuu1t" path="res://default_bottons.tres" id="2_g4sgy"]
 [ext_resource type="AudioStream" uid="uid://buvib20j87eoe" path="res://sounds/WetHands.mp3" id="4_puusb"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_v0fcw"]
+action = &"start_game"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_xndao"]
+events = [SubResource("InputEventAction_v0fcw")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_do1sb"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_2s1fq"]
+action = &"creditos"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_b5hku"]
+events = [SubResource("InputEventAction_2s1fq")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_823e7"]
+action = &"sair"
+
+[sub_resource type="Shortcut" id="Shortcut_82lou"]
+events = [SubResource("InputEventAction_823e7")]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -18,8 +38,8 @@ script = ExtResource("1_r5qil")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1079.0
+offset_bottom = 567.0
 texture = ExtResource("1_yfkj1")
 expand_mode = 2
 
@@ -48,7 +68,8 @@ size_flags_vertical = 8
 [node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_g4sgy")
-text = "Iniciar"
+shortcut = SubResource("Shortcut_xndao")
+text = "                     Iniciar                     "
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -57,6 +78,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_do1sb")
 [node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_g4sgy")
+shortcut = SubResource("Shortcut_b5hku")
 text = "Creditos
 "
 
@@ -67,6 +89,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_do1sb")
 [node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_g4sgy")
+shortcut = SubResource("Shortcut_82lou")
 text = "Sair
 "
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceatn5g7xqbq6"]
+
+[ext_resource type="Script" path="res://Characters/pause_menu.gd" id="1_5xn24"]
+[ext_resource type="Theme" uid="uid://bsuebl5uh5ut5" path="res://pause_menu.tres" id="1_ex88k"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_5xn24")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.486275)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -24.0
+offset_right = 54.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="retomar_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("1_ex88k")
+text = "RETOMAR"
+
+[node name="sair_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("1_ex88k")
+text = "SAIR DO JOGO"
+
+[connection signal="pressed" from="menu_holder/retomar_btn" to="." method="_on_retomar_btn_pressed"]
+[connection signal="pressed" from="menu_holder/sair_btn" to="." method="_on_sair_btn_pressed"]

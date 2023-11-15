@@ -16,7 +16,7 @@ var knockback_vector := Vector2.ZERO
 @onready var damage_sfx = $damage_sfx as AudioStreamPlayer
 @onready var timer_game_over = $timer_game_over as Timer
 
-var target_position = Vector2(5324, -383)
+var target_position = Vector2(5670, -250)
 signal player_has_died()
 
 func _physics_process(delta):

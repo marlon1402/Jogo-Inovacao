@@ -9,7 +9,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_he8re"]
 radius = 7.0
-height = 18.0
+height = 22.0
 
 [sub_resource type="Animation" id="Animation_rhe63"]
 length = 0.001
@@ -181,7 +181,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8jcx"]
-size = Vector2(12, 2.5)
+size = Vector2(16, 3)
 
 [node name="enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
@@ -213,7 +213,7 @@ collision_mask = 6
 [node name="hitbox" parent="." instance=ExtResource("5_0xdgc")]
 
 [node name="Collision2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -17)
+position = Vector2(1, -17)
 shape = SubResource("RectangleShape2D_n8jcx")
 
 [node name="died_sfx" type="AudioStreamPlayer" parent="hitbox"]

@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bsuebl5uh5ut5"]
+
+[ext_resource type="FontFile" uid="uid://citlncmac81sc" path="res://font/RevMiniPixel.ttf" id="1_alwo3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ux860"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muujr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65q3v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pbre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qyv1"]
+
+[resource]
+Button/colors/font_focus_color = Color(0.913725, 0, 0.454902, 0.984314)
+Button/colors/font_hover_color = Color(0.913725, 0, 0.454902, 0.984314)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_alwo3")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ux860")
+Button/styles/focus = SubResource("StyleBoxEmpty_muujr")
+Button/styles/hover = SubResource("StyleBoxEmpty_65q3v")
+Button/styles/normal = SubResource("StyleBoxEmpty_7pbre")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5qyv1")
