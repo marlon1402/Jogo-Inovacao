@@ -7,7 +7,7 @@
 <p>Para instalar este projeto, siga estas etapas:</p>
 
 <ol>
-  <li>Clone o repositório: <code>git clone https://github.com/marlon1402/Priscila_game</code></li>
+  <li>Clone o repositório: <code>https://github.com/marlon1402/Priscila_game</code></li>
   <li>Extraia a pasta .zip, e Execute o .exe</li>
   <!-- Outras etapas de instalação -->
 </ol>
