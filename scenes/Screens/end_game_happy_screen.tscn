@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bqpyttjfhh7k4" path="res://sounds/Um_Pedido.mp3" id="1_b8c1a"]
 [ext_resource type="Script" path="res://Characters/end_game_happy_screen.gd" id="1_flh5b"]
-[ext_resource type="Texture2D" uid="uid://g02ek6cyddsm" path="res://assets/Sprite Pack 5/10 - Backgrounds/BG.png" id="1_gm8fn"]
+[ext_resource type="Texture2D" uid="uid://dqemcik2ycc7w" path="res://assets/Sprite Pack 5/10 - Backgrounds/Win.png" id="2_i37d4"]
 [ext_resource type="FontFile" uid="uid://citlncmac81sc" path="res://font/RevMiniPixel.ttf" id="2_x6rkg"]
 
 [node name="end_game_happy_screen" type="Control"]
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_gm8fn")
+texture = ExtResource("2_i37d4")
 
 [node name="Label" type="Label" parent="BG"]
 layout_mode = 1
@@ -30,8 +30,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 theme_override_fonts/font = ExtResource("2_x6rkg")
+theme_override_font_sizes/font_size = 32
 text = "Você Chegou No Horário.
 
 Você Desbloqueou o Final Secreto
