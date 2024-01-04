@@ -1,4 +1,4 @@
-<h1>😍🤣Priscila Game🤣😍</h1>
+<h1>Priscila Game</h1>
 
 <p>Jogo de plataforma 2d, de extrema dificuldade e com uma história emocionante.</p>
 
